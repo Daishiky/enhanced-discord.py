@@ -5562,5 +5562,23 @@ class Colour:
     def crayon_piggy_pink(cls):
         """A factory method that returns a :class:`Colour` with a value of ``0xFDDDE6``."""
         return cls(0xFDDDE6)
+    
+    @classmethod
+    def embed_background(theme: str = "dark", cls: Type[CT]) -> CT:
+        """A factory method that returns a :class:`Color` with a value of 
+        ``0x2F3136`` (dark)
+        ``0xf2f3f5`` (light).
+        
+        .. versionadded:: 2.0
+        """
+        themes_cls = {
+            "dark": 0x2F3136,
+            "light": 0xf2f3f5
+        }
+        
+        if theme not in themes_cls:
+            raise TypeError("Theme must be one of \"dark\" and \"light\".")
+        
+        return cls(themes_cls[theme])
 
 Color = Colour
