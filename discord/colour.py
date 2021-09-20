@@ -5564,7 +5564,7 @@ class Colour:
         return cls(0xFDDDE6)
     
     @classmethod
-    def embed_background(theme: str = "dark", cls):
+    def embed_background(cls, theme: str = "dark"):
         """A factory method that returns a :class:`Color` with a value of 
         ``0x2F3136`` (dark)
         ``0xf2f3f5`` (light).
